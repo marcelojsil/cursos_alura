@@ -8,23 +8,24 @@ function mostra(frase) {
     pulaLinha();
 }
 
-/*var vitorias = document.getElementById(input1);
-var empates = document.getElementById(input2);
-
-var pontos = vitorias * 3 + empates;*/
-
-var vitorias = parseInt(prompt("Entre com o número de vitórias."));
-var empates = parseInt(prompt("Número de empates."));
-var pontos = vitorias * 3 + empates
-mostra("Os pontos do seu time são " + pontos);
-
-if(pontos > 28) {
-    mostra("Seu time está melhor que ano passado!")
-}
-if(pontos == 28) {
-    mostra("Seu time está igual ao ano passado!")
-}
-if(pontos < 28) {
-    mostra("Seu time está pior que ano passado!")
+function calculaIMC(altura, peso) {
+    return peso / (altura * altura);
 }
 
+var nome = prompt("Informe o seu nome.");
+var altInformada = prompt("Informe a sua altura.");
+var pesoInformado = prompt("Informe o seu peso.");
+
+var imc = calculaIMC(altInformada, pesoInformado);
+
+mostra(nome + ", o seu IMC é " + imc);
+
+if(imc < 18.5) {
+    mostra("O seu peso está abaixo do normal, procure um nutricionista para ajudá-lo!");
+}
+if(imc >= 35) {
+    mostra("O seu peso está acima do normal, procure um especialista.");
+}
+if(imc >= 18.5 && imc < 35) {
+    mostra("O seu peso está no ideal, mantenha o seu cuidado!");
+}
